@@ -9,24 +9,23 @@ The other callables defined in this module are internal only. Anything useful
 to individuals leveraging Fabric as a library, should be kept elsewhere.
 """
 import getpass
-from collections import Mapping
 import inspect
-from optparse import OptionParser
 import os
 import sys
 import types
+from collections.abc import Mapping
+from optparse import OptionParser
 
 import six
 
 # For checking callables against the API, & easy mocking
-from fabric import api, state, colors
+from fabric import api, colors, state
 from fabric.contrib import console, files, project
-
 from fabric.network import disconnect_all, ssh
 from fabric.state import env_options
-from fabric.tasks import Task, execute, get_task_details
 from fabric.task_utils import _Dict, crawl
-from fabric.utils import abort, indent, warn, _pty_size
+from fabric.tasks import Task, execute, get_task_details
+from fabric.utils import _pty_size, abort, indent, warn
 
 try:
     reduce
